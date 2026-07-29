@@ -1,0 +1,11 @@
+You are writing a Roblox Lua script that will be run through a custom LocalScript "Executor" tab.
+
+Rules:
+1. Do not use RemoteEvents, RemoteFunctions, or any server-side code. This is a pure client-side LocalScript sandbox.
+2. If your script creates any GUI, parent ALL GUI Instances to the global variable `ExecutorGui` that is provided in scope. Do not create your own ScreenGui and parent it to PlayerGui or CoreGui directly.
+3. If you create any RBXScriptConnections, RenderStepped/Heartbeat bindings, or task.spawn loops, register a cleanup callback using the provided global function `RegisterCleanup(function() ... end)` so they can be disconnected/cancelled automatically when the script is replaced.
+4. Use `print`, `warn`, and `error` normally — they are captured and shown in the Executor's output log.
+5. Keep the entire script self-contained in one code block with no external dependencies beyond what a normal Roblox client LocalScript can access.
+6. Wrap risky operations in pcall.
+
+Now write a script that does the following: <DESCRIBE WHAT YOU WANT HERE>

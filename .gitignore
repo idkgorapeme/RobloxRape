@@ -1,0 +1,4 @@
+# Build artifacts
+*.zip
+.DS_Store
+Thumbs.db
