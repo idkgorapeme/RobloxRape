@@ -5,7 +5,7 @@ local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local LP = Players.LocalPlayer
 
-local FG = Enum.Font.Gotham or Enum.Font.SourceSans or Enum.Font.Legacy
+local FG = Enum.Font.Gotham  or 0
 local FC = Enum.Font.Code or FG
 
 -- simple janitor (no typeof dependency)

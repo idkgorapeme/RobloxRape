@@ -4,21 +4,9 @@
 local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
 -- font fallback
-local FONT_MAIN, FONT_BOLD, FONT_MONO
-do
-    local function sf(name)
-        local ok, val = pcall(function() return Enum.Font[name] end)
-        if ok and val then return val end
-        for _,n in ipairs({"SourceSans","SourceSansBold","Legacy","Arial","ArialBold"}) do
-            local ok2, val2 = pcall(function() return Enum.Font[n] end)
-            if ok2 and val2 then return val2 end
-        end
-        return 0
-    end
-    FONT_MAIN = sf("Gotham")
-    FONT_BOLD = sf("GothamBold")
-    FONT_MONO = sf("Code")
-end
+local FONT_MAIN = Enum.Font.Gotham  or 0
+local FONT_BOLD = Enum.Font.GothamBold or FONT_MAIN
+local FONT_MONO = Enum.Font.Code or FONT_MAIN
 
 local function try(fn)
 	pcall(fn)

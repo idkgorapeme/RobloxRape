@@ -7,7 +7,7 @@ local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
 -- font fallback
-local FG = Enum.Font.Gotham or Enum.Font.SourceSans or Enum.Font.Legacy
+local FG = Enum.Font.Gotham  or 0
 local FB = Enum.Font.GothamBold or FG
 local FC = Enum.Font.Code or FG
 
@@ -105,9 +105,9 @@ function Executor.Build(tab, ui, state, cleanup, viewportApi)
 		-- Auto-track task.* threads
 		local sT={}
 		for k,v in pairs(task or {spawn=coroutine.wrap,wait=wait}) do
-			if k=="spawn" then sT[k]=function(fn,...) local a={...}; local th=task.spawn(function() fn(table.unpack(a)) end); j:Add(th); return th end
-			elseif k=="delay" then sT[k]=function(t,fn,...) local a={...}; local th=task.delay(t,function() fn(table.unpack(a)) end); j:Add(th); return th end
-			elseif k=="defer" then sT[k]=function(fn,...) local a={...}; local th=(task.defer or task.spawn)(function() fn(table.unpack(a)) end); j:Add(th); return th end
+			if k=="spawn" then sT[k]=function(fn,...) local a={...}; local th=task.spawn(function() fn(unpack(a)) end); j:Add(th); return th end
+			elseif k=="delay" then sT[k]=function(t,fn,...) local a={...}; local th=task.delay(t,function() fn(unpack(a)) end); j:Add(th); return th end
+			elseif k=="defer" then sT[k]=function(fn,...) local a={...}; local th=(task.defer or task.spawn)(function() fn(unpack(a)) end); j:Add(th); return th end
 			else sT[k]=v end
 		end
 
@@ -118,11 +118,11 @@ function Executor.Build(tab, ui, state, cleanup, viewportApi)
 			task=sT,pcall=pcall,xpcall=xpcall,
 			math=math,string=string,table=table,coroutine=coroutine,bit32=bit32,
 			rawget=rawget,rawset=rawset,rawequal=rawequal,rawlen=rawlen,
-			next=next,ipairs=ipairs,pairs=pairs,select=select,unpack=table.unpack or unpack,
+			next=next,ipairs=ipairs,pairs=pairs,select=select,unpack=unpack,
 			type=type,tonumber=tonumber,tostring=tostring,assert=assert,
 			wait=wait,tick=tick,time=time,
-			spawn=function(fn,...) local a={...}; local th=task.spawn(function() fn(table.unpack(a)) end); j:Add(th); return th end,
-			delay=function(t,fn,...) local a={...}; local th=task.delay(t or 0,function() fn(table.unpack(a)) end); j:Add(th); return th end,
+			spawn=function(fn,...) local a={...}; local th=task.spawn(function() fn(unpack(a)) end); j:Add(th); return th end,
+			delay=function(t,fn,...) local a={...}; local th=task.delay(t or 0,function() fn(unpack(a)) end); j:Add(th); return th end,
 			TweenService=TweenService,UserInputService=UserInputService,Players=Players,RunService=RunService,
 			ReplicatedStorage=game:GetService("ReplicatedStorage"),
 			Lighting=game:GetService("Lighting"),

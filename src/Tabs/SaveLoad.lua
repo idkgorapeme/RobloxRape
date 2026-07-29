@@ -3,7 +3,7 @@ print("[SaveLoad] Loading...")
 
 local HttpService = game:GetService("HttpService")
 
-local FG = Enum.Font.Gotham or Enum.Font.SourceSans or Enum.Font.Legacy
+local FG = Enum.Font.Gotham  or 0
 local FB = Enum.Font.GothamBold or FG
 local FC = Enum.Font.Code or FG
 

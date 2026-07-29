@@ -1,7 +1,7 @@
 -- PromptGenerator.lua -- Tab 4
 print("[PromptGenerator] Loading...")
 
-local FG = Enum.Font.Gotham or Enum.Font.SourceSans or Enum.Font.Legacy
+local FG = Enum.Font.Gotham  or 0
 local FC = Enum.Font.Code or FG
 
 local PROMPT = [[You are writing a Roblox Lua script that will be run through a custom LocalScript "Executor" tab.

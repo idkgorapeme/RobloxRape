@@ -134,7 +134,7 @@ function Esp:_add(player)
 	bb.AlwaysOnTop=true; bb.Size=UDim2.new(0,200,0,20); bb.StudsOffset=Vector3.new(0,2.5,0); bb.MaxDistance=self._md
 	local nl=Instance.new("TextLabel")
 	nl.BackgroundTransparency=1; nl.Size=UDim2.new(1,0,1,0); nl.Text=player.Name
-	nl.TextColor3=Color3.new(1,1,1); nl.Font=Enum.Font.GothamBold or Enum.Font.SourceSansBold or Enum.Font.SourceSans; nl.TextSize=13
+	nl.TextColor3=Color3.new(1,1,1); nl.Font=Enum.Font.GothamBold or Enum.Font.SourceSansBold ; nl.TextSize=13
 	nl.TextStrokeTransparency=0; nl.TextStrokeColor3=Color3.new(0,0,0); nl.Parent=bb
 	d.nameBb=bb; self._cleanup:Add(bb)
 	local db=Instance.new("BillboardGui")
@@ -196,7 +196,7 @@ function Esp:_tick()
 
 		d.nameBb.Enabled=self._names and onScr; d.nameBb.MaxDistance=self._md
 		d.distBb.Enabled=self._dist and onScr; d.distBb.MaxDistance=self._md
-		if self._dist then pcall(function() d.distBb:FindFirstChildOfClass("TextLabel").Text=("%.0fm"):format(dist) end) end
+		if self._dist then pcall(function() d.distBb:FindFirstChildOfClass("TextLabel").Text=string.format("%.0fm", dist) end) end
 		if d.tracer then
 			if self._tracers and onScr then d.tracer.Visible=true; d.tracer.From=Vector2.new(vs.X/2,vs.Y); d.tracer.To=Vector2.new(sp.X,sp.Y); d.tracer.Color=self._tc
 			else d.tracer.Visible=false end
