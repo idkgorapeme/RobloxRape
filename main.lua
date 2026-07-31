@@ -507,7 +507,7 @@ end
 
 -- ==================== TAB 2: WORLD 2 & KEYS (with upgraded Special Key Farm) ====================
 local slope1 = { CFrame = CFrame.lookAt((Vector3.new(3282,593,3852)+Vector3.new(3390,670,3904))/2, Vector3.new(3390,670,3904)), Size = Vector3.new(40,1,(Vector3.new(3390,670,3904)-Vector3.new(3282,593,3852)).Magnitude) }
-local blue1  = { CFrame = CFrame.lookAt((Vector3.new(3390,640,3904)+Vector3.new(3295,640,5191))/2, Vector3.new(3295,640,5191)), Size = Vector3.new(40,1,(Vector3.new(3295,640,5191)-Vector3.new(3390,640,3904)).Magnitude) }
+local blue1  = { CFrame = CFrame.lookAt((Vector3.new(3390,600,3904)+Vector3.new(3295,600,5191))/2, Vector3.new(3295,600,5191)), Size = Vector3.new(40,1,(Vector3.new(3295,600,5191)-Vector3.new(3390,600,3904)).Magnitude) }
 local blue2  = { CFrame = CFrame.lookAt((Vector3.new(3295,648,5191)+Vector3.new(4560,648,5097))/2, Vector3.new(4560,648,5097)), Size = Vector3.new(40,1,(Vector3.new(4560,648,5097)-Vector3.new(3295,648,5191)).Magnitude) }
 local slope2 = { CFrame = CFrame.lookAt((Vector3.new(4722,568,5120)+Vector3.new(4996,686,5205))/2, Vector3.new(4996,686,5205)), Size = Vector3.new(40,1,(Vector3.new(4996,686,5205)-Vector3.new(4722,568,5120)).Magnitude) }
 local slope3 = { CFrame = CFrame.lookAt((Vector3.new(5139,557,5100)+Vector3.new(5739,556,5187))/2, Vector3.new(5739,556,5187)), Size = Vector3.new(40,1,(Vector3.new(5739,556,5187)-Vector3.new(5139,557,5100)).Magnitude) }
